@@ -1,0 +1,468 @@
+
+
+
+
+
+
+h3 {
+    color: #2980b9; /* Màu tiêu đề phụ */
+    font-size: 1.8em; /* Kích thước tiêu đề phụ */
+    margin-bottom: 10px; /* Khoảng cách dưới tiêu đề phụ */
+}
+
+/* Định dạng hàng */
+.row {
+    display: flex; /* Sử dụng flexbox */
+    flex-wrap: wrap; /* Cho phép wrap */
+    margin: 20px ; 
+    gap: 10px;/* Khoảng cách giữa các hàng */
+}
+
+/* Cột */
+.col-md-4, .col-md-6 {
+    padding: 10px; /* Khoảng cách trong cột */
+    flex: 1; /* Cột chiếm đều không gian */
+    min-width: 250px; /* Đảm bảo cột không quá hẹp */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng cho cột */
+    background-color: #fff; /* Màu nền trắng cho cột */
+    border-radius: 8px; /* Bo góc cho cột */
+    transition: transform 0.3s; /* Hiệu ứng khi hover */
+}
+
+.col-md-4:hover, .col-md-6:hover {
+    transform: translateY(-5px); /* Hiệu ứng nhấc lên khi hover */
+}
+
+/* Căn giữa văn bản */
+.text-center {
+    text-align: center; /* Căn giữa văn bản */
+}
+
+/* Hình ảnh */
+.img-fluid {
+    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá kích thước cột */
+    height: auto; /* Tự động điều chỉnh chiều cao */
+    display: block; /* Để căn giữa hình ảnh */
+    margin: 20px auto; /* Giúp hình ảnh căn giữa */
+    border-radius: 8px; /* Bo góc cho hình ảnh */
+}
+
+/* Danh sách */
+ul {
+    list-style: none; /* Bỏ dấu gạch đầu dòng */
+    padding: 0; /* Bỏ padding */
+}
+
+footer {
+    background-color: #e7e7e7; /* Màu nền cho footer */
+    padding: 20px 0; /* Khoảng cách trên dưới */
+    text-align: center; /* Căn giữa nội dung footer */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column; /* Đặt cột thành hàng trên màn hình nhỏ */
+    }
+
+    .col-md-6, .col-md-4 {
+        min-width: 100%; /* Cột chiếm toàn bộ chiều rộng */
+    }
+
+    h1 {
+        font-size: 2em; /* Giảm kích thước tiêu đề chính */
+    }
+
+    h3 {
+        font-size: 1.5em; /* Giảm kích thước tiêu đề phụ */
+    }
+}
+/* Định dạng danh sách chi nhánh */
+
+
+
+
+.row a{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+  }
+  
+  body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    scroll-behavior: smooth;
+  }
+  header {
+    width: 100%;
+  }
+  .top {
+    width: 100%;
+    height: 30px;
+    background: #f1f1f1;
+    display: flex;
+    text-align: center;
+    border-bottom: 1px #e1e1e1 solid;
+    overflow: hidden;
+    transition: top 0.3s;
+    
+  }
+  .icon a {
+    text-align: center;
+    padding-top: 6px;
+    width: 25px;
+    height: 30px;
+    color: grey;
+    text-decoration: none;
+  }
+  .icon a:hover {
+    background-color: #b4b4b1;
+    color: black;
+  }
+  .top .left {
+    flex: 0.9;
+    color: white;
+  }
+  .top .center {
+    flex: 2;
+    color: white;
+    text-align: center;
+  }
+  .top .right {
+    flex: 1.1;
+    color: white;
+    text-align: center;
+  }
+  .language, .price {
+    border: none;
+    height: 30px;
+    color: grey;
+    background: #f1f1f1;
+  }
+  .header {
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 0;
+    z-index: 10;
+    transition: top 0.3s;
+  }
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+  }
+  .hidden {
+    top: -50px;
+  }
+  
+  
+  @media (max-width: 768px){
+      .top .center{
+          display: none;
+      }
+      .iconuser-cart{
+          display: flex;
+      }
+      
+  }
+  
+  .header{
+      display: block;
+   width: 100%;
+   height: 50px;
+   /* background-color: green;    */
+  }
+  .nav-item{
+      display: flex;
+      cursor: pointer;
+  }
+  .nav-item:hover{
+      color: grey;
+  }
+  .navbar .form-inline {
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-end;
+  }
+  
+  .navbar .form-control {
+      width: 430px;
+      max-width: 500px; /* Đặt giới hạn cho chiều rộng tối đa */
+  }
+  @media (max-width: 768px){
+      .navbar .form-control {
+          
+          /* text-align: center; */
+          width: 250px;
+           /* Đặt giới hạn cho chiều rộng tối đa */
+      }
+  }
+  
+  /* Phần tài khoản */
+  /* Style cho input */
+  .ii {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    
+    /* Style cho button */
+    .ab {
+      background-color: #04AA6D;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    .aa:hover {
+      opacity: 0.8;
+    }
+    
+    /* Style cho cancel button */
+    .jj {
+      width: auto;
+      padding: 10px 18px;
+      background-color: #f44336;
+    }
+    
+    /* Style cho container chứa hình ảnh và nút đóng */
+    .ee {
+      text-align: center;
+      margin: 24px 0 12px 0;
+      position: relative;
+    }
+    
+    img.gg {
+      width: 40%;
+      border-radius: 50%;
+    }
+    
+    /* Style cho container */
+    .hh {
+      padding: 16px;
+    }
+    
+    span.kk {
+      float: right;
+      padding-top: 16px;
+    }
+    
+    /* Style cho modal */
+    .bb {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0,0.4);
+      
+    }
+    
+    /* Style cho modal content */
+    .cc {
+      background-color: #fefefe;
+      margin: 5% auto 15% auto;
+      border: 1px solid #888;
+      width: 70%;
+    }
+    
+    /* Style cho nút đóng (x) */
+    .ff {
+      position: absolute;
+      right: 25px;
+      top: 0;
+      color: #000;
+      font-size: 35px;
+      font-weight: bold;
+    }
+    
+    .ff:hover,
+    .ff:focus {
+      color: red;
+      cursor: pointer;
+    }
+    
+    /* Thêm hiệu ứng phóng to cho modal */
+    .dd {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s;
+    }
+    
+    @-webkit-keyframes animatezoom {
+      from { -webkit-transform: scale(0); } 
+      to { -webkit-transform: scale(1); }
+    }
+      
+    @keyframes animatezoom {
+      from { transform: scale(0); } 
+      to { transform: scale(1); }
+    }
+    @media screen and (max-width: 600px){
+      .cc{
+          width: 80%;
+      }
+      .bb{
+          padding-top: 20px;
+      }
+    }
+    /* Điều chỉnh trên màn hình nhỏ */
+    @media screen and (max-width: 300px) {
+      span.kk {
+         display: block;
+         float: none;
+      }
+      .jj {
+         width: 100%;
+      }
+      .cc{
+          width: 80%;
+      }
+    }
+  
+  
+    /* Phần Sign up */
+    /* Full-width input fields */
+  .signup-h {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
+    
+    /* Add a background color when the inputs get focus */
+    .signup-h:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+    
+    /* Set a style for all buttons */
+     .signup-j, .signup-k {
+      background-color: #04AA6D;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
+    
+    .signup-a:hover, .signup-j:hover, .signup-k:hover {
+      opacity: 1;
+    }
+    
+    /* Extra styles for the cancel button */
+    .signup-j {
+      background-color: #f44336;
+    }
+    
+    /* Float cancel and signup buttons and add an equal width */
+    .signup-j, .signup-k {
+      float: left;
+      width: 50%;
+    }
+    
+    /* Add padding to container elements */
+    .signup-f {
+      padding: 16px;
+    }
+    
+    /* The Modal (background) */
+    .signup-b {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: #c7c9cf;
+      padding-left: 300px;
+      padding-right: 300px;
+      padding-top: 50px;
+    }
+    
+    /* Modal Content/Box */
+    .signup-d {
+      background-color: #fefefe;
+      margin: 5% auto 15% auto;
+      border: 1px solid #888;
+      width: 80%; /* Could be more or less, depending on screen size */
+    }
+    
+    /* Style the horizontal ruler */
+    .signup-g {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+    }
+    
+    /* The Close Button (x) */
+    .signup-c {
+      position: absolute;
+      right: 35px;
+      top: 15px;
+      font-size: 40px;
+      font-weight: bold;
+      color: #f1f1f1;
+    }
+    
+    .signup-c:hover,
+    .signup-c:focus {
+      color: #f44336;
+      cursor: pointer;
+    }
+    
+    /* Clear floats */
+    .signup-i::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    @media screen and (max-width: 900px){
+      .signup-b{
+          width: 100%;
+          height: 100%;
+          padding-left:20px;
+      padding-right:20px;
+      padding-top: 0px;
+      }
+    }
+  
+    @media screen and (max-width: 300px) {
+      .signup-j, .signup-k {
+         width: 100%;
+      }
+    }
+    
+    
