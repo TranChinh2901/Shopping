@@ -138,46 +138,6 @@ console.log(listProduct);
 
 
 
-// let productDealHot = null;
-// fetch('products.json')
-// .then(response => response.json())
-// .then(data =>{
-//     productDealHot = data;
-//     console.log(productDealHot);
-//     addDataToHTML();
-// })
-// //dữ liệu
-// let listProductDealHot = document.querySelector('.listProductDealHot');
-// function addDataToHTML(){
-//     productDealHot.forEach(productDealHotItem => {
-//         //Tạo một element mới
-//         let newProductDealHot = document.createElement('a');
-//         newProductDealHot.href = '/cart/detail.html?id=' + productDealHotItem.id;
-//         newProductDealHot.classList.add('item');
-//         newProductDealHot.setAttribute('data-aos', 'zoom-in-up'); // Thay đổi thành zoom-in
-//         newProductDealHot.setAttribute('data-aos-offset', '300'); // Thêm offset
-//         newProductDealHot.setAttribute('data-aos-easing', 'ease-in-sine'); // Thêm easing
-//         newProductDealHot.innerHTML = `
-//         <p class="tragop">${productDealHotItem.tragop}</p>
-//         <img src="${productDealHotItem.image}">
-//         <div class="bocngoai">
-//         <h4>${productDealHotItem.name}</h4>
-//         <div class="detail-price">
-//         <p style="color:red">${productDealHotItem.prices}</p>
-//         <div class="danhgia-icon">
-//         <p>${productDealHotItem.danhgia}</p> 
-//         <a style="font-weight: bold; color:blue">Xem thêm </a>
-//         </div>
-//         </div>
-//         </div>
-//         `;
-//         //Thêm element này vào listproduct
-//         listProductDealHot.appendChild(newProductDealHot);
-//     })
-// };
-
-
-
 
 
 
@@ -195,21 +155,3 @@ document.getElementById('cart-link').addEventListener('click', function(event) {
 
 
 
-// Hàm này sẽ được gọi khi ngôn ngữ được thay đổi
-function changeLanguage(language) {
-    // Tải file JSON tương ứng với ngôn ngữ đã chọn
-    fetch(`${language}.json`)
-      .then(response => response.json())
-      .then(data => {
-        // Cập nhật các phần tử trong trang với bản dịch từ JSON
-        document.querySelector('.nav-link.home').textContent = data.home;
-        document.querySelector('.nav-link.news').textContent = data.news;
-        document.querySelector('.nav-link.warranty').textContent = data.warranty;
-        document.querySelector('.nav-link.contact').textContent = data.contact;
-        document.querySelector('.account-text').textContent = data.account;
-        document.querySelector('.cart-text').textContent = data.cart;
-        document.querySelector('.flashsales-top h2').textContent = data.flash_sales;
-      })
-      .catch(error => console.error('Error:', error));
-  }
-  
