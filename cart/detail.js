@@ -44,7 +44,7 @@ function stickyNav() {
 
 //lấy dữ liệu từ products.json
 let products = null;
-fetch('../products.json')
+fetch('/products.json')
 .then(response => response.json())
 .then(data => {
     products =data;
@@ -110,3 +110,86 @@ function showDetail() {
 
 
 
+
+const buyNowButton = document.getElementById('buy-now');
+
+// Lấy thông tin sản phẩm hiện tại từ URL
+const productIdPay = new URLSearchParams(window.location.search).get('id'); // Lấy ID sản phẩm từ URL
+let productsPay = null;
+
+// Fetch data từ products.json để lấy chi tiết sản phẩm
+fetch('/products.json')
+    .then(response => response.json())
+    .then(data => {
+        productsPay = data;
+        const product = productsPay.find(item => item.id == productIdPay); // Tìm sản phẩm theo ID
+
+        // Sự kiện khi nhấn nút "Mua ngay"
+        buyNowButton.addEventListener('click', function () {
+            const userConfirmed = confirm(`Đơn hàng ${product.name} đã sẵn sàng, bạn đồng ý mua chứ?`);
+
+            if (userConfirmed) {
+                const urlParams = new URLSearchParams({
+                    id: product.id,
+                    name: product.name,
+                    price: product.prices,
+                    image: product.image
+                });
+                window.location.href = `/thanhtoan/thanhtoan.html?${urlParams.toString()}`;
+            }
+        });
+
+        // addToCartButton.addEventListener('click', function () {
+        //     const urlParams = new URLSearchParams({
+        //         id: product.id,
+        //         name: product.name,
+        //         price: product.prices,
+        //         image: product.image
+        //     });
+        //     window.location.href = `/addtocart/cart.html?${urlParams.toString()}`; // Chuyển đến trang giỏ hàng
+        // });
+    });
+
+
+
+    const addToCartButton = document.getElementById('add-to-cart');
+
+    // Giả định bạn đã lấy thông tin sản phẩm trong biến `product`
+    const productId = product.id; // Lấy ID sản phẩm
+    const productName = product.name; // Lấy tên sản phẩm
+    const productPrice = product.prices; // Lấy giá sản phẩm
+    const productImage = product.image; // Lấy hình ảnh sản phẩm
+
+    addToCartButton.addEventListener('click', function() {
+        // Hiển thị thông báo cho người dùng
+        alert('Bạn đã thêm sản phẩm vào giỏ hàng');
+
+        // Tạo URL với thông tin sản phẩm
+        const urlParams = new URLSearchParams({
+            id: productId,
+            name: productName,
+            price: productPrice,
+            image: productImage
+        });
+
+        // Chuyển hướng đến trang giỏ hàng với thông tin sản phẩm
+        window.location.href = `/addtocart/cart.html?${urlParams.toString()}`;  // Đảm bảo đường dẫn đúng
+    });
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
