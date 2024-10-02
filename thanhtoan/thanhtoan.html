@@ -41,14 +41,14 @@
       <div class="header" id="sticky-header">
           <nav class="navbar navbar-expand-lg bg-body-tertiary">
               <div class="container">
-                <a class="navbar-brand me-5" href="home.html" style="font-weight: bold; font-size: 30px;"><Strong style="color: Red;">S</Strong>TORE</a>
+                <a class="navbar-brand me-5" href="/home.html" style="font-weight: bold; font-size: 30px;"><Strong style="color: Red;">S</Strong>TORE</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse mt-1" id="navbarSupportedContent">
                     
                     <li class="nav-item d-flex  ms-2 me-1">
-                      <a class="nav-link active" href="home.html">
+                      <a class="nav-link active" href="/home.html">
                         <i class="fa-solid fa-house"></i> 
                         
                       </a>
@@ -191,8 +191,16 @@
         <div class="product-details-right">
           <p><strong>Tên sản phẩm:</strong> <span id="product-name"></span></p>
           <p><strong>Giá:</strong> <span id="product-price"></span> VND</p>
-
-        </div>
+          
+          <!-- Thêm điều khiển tăng/giảm số lượng -->
+          <div class="quantity-control">
+              <button id="decrease-quantity" class="btn btn-danger">-</button>
+              <input type="number" id="product-quantity" value="1" min="1" style="width: 50px;" readonly>
+              <button id="increase-quantity" class="btn btn-success">+</button>
+          </div>
+      
+          <p><strong>Tổng giá:</strong> <span id="total-price"></span> VND</p>
+      </div>
           <!-- <p><strong>ID sản phẩm:</strong> <span id="product-id"></span></p> -->
       </div>
       
@@ -213,6 +221,17 @@
   </div>
   </div>
    </div>
+
+   <div class="kieuthanhtoan">
+    <div class="online">
+      <h2>Thanh toán online</h2>
+    </div>
+  </div>
+
+
+
+ 
+
     <br>
     <br>
     <br>

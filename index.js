@@ -153,5 +153,51 @@ document.getElementById('cart-link').addEventListener('click', function(event) {
 
 
 
+// ************************************* Pixel button bottom ****************************************
+
+const scrollTopButton = document.getElementById('scroll-top');
+
+// Scroll to the top of the page
+scrollTopButton.addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' 
+    });
+});
 
 
+window.addEventListener('scroll', function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollTopButton.style.display = "block"; 
+    } else {
+        scrollTopButton.style.display = "none"; 
+    }
+});
+
+scrollTopButton.style.display = "none";
+
+
+
+
+
+const btnZalo = document.querySelector('.btn-zalo');
+
+function shakeButton() {
+    btnZalo.classList.add('shake'); 
+    setTimeout(() => {
+        btnZalo.classList.remove('shake'); 
+    }, 500); 
+}
+
+setInterval(shakeButton, 2500);
+
+
+const btnFacebook = document.querySelector('.btn-facebook');
+function shakeFacebook() {
+    btnFacebook.classList.add('shake'); // Add shake class
+    setTimeout(()=>{
+        btnFacebook.classList.remove('shake'); // Remove shake class after animation
+    },500);
+}
+
+setInterval(shakeFacebook, 4000);

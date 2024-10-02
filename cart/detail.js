@@ -185,11 +185,3 @@ fetch('/products.json')
 
 
 
-
-
-
-
-
-
-
-    

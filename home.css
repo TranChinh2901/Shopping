@@ -778,3 +778,92 @@ a{
       justify-content: center;
   }
 }
+
+
+
+/* *************************************** Pixel buttom bottom ******************************************** */
+
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-scroll-top {
+  background-color: #ff4757; /* Red color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.btn-zalo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.btn-facebook {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-zalo img {
+  width: 100%; /* Adjust image size */
+  border-radius: 50%;
+}
+.btn-facebook img {
+  width: 100%; /* Adjust image size */
+  border-radius: 50%;
+}
+/* Define shaking animation */
+@keyframes shake {
+  0% { transform: translate(0); }
+  25% { transform: translate(-5px, 0); }
+  50% { transform: translate(5px, 0); }
+  75% { transform: translate(-5px, 0); }
+  100% { transform: translate(0); }
+}
+
+/* Class to apply shake effect */
+.shake {
+  animation: shake 0.5s ease-in-out; /* Apply the shake animation */
+}
+
+/* Floating button styles */
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-scroll-top {
+  background-color: #ff4757; /* Red color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  display: none; /* Initially hidden */
+}
+
+
