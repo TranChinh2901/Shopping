@@ -129,12 +129,13 @@ function addDataToHTML(){
         </div>
         </div>
         `;
+        console.log(listProduct);
+
         //Thêm element này vào listproduct
         listProduct.appendChild(newProduct);
     })
 };
 
-console.log(listProduct);
 
 
 
